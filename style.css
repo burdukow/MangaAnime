@@ -34,19 +34,6 @@ header h1 {
   width: 200px;
 }
 
-header.shrink {
-  padding: 0.5em;
-  font-size: 0.8em;
-}
-
-header.shrink h1 {
-  font-size: 1.5em;
-}
-
-header.shrink .search-container input {
-  width: 150px;
-}
-
 nav {
   display: flex;
   justify-content: center;
@@ -122,6 +109,7 @@ main {
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .content-item:hover {
   transform: scale(1.05);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -200,15 +188,14 @@ footer {
 
 @media screen and (max-width: 768px) {
   header {
-    display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     height: auto;
     padding: 1em;
   }
 
   header h1 {
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
   }
 
   nav {
@@ -216,19 +203,27 @@ footer {
   }
 
   nav ul {
-    visibility: hidden;
-    list-style: none;
-    margin: 0;
+    display: none;
+    flex-direction: column;
+    width: 100%;
     padding: 0;
+    margin: 0;
   }
 
   nav ul.show {
-    visibility: visible;
+    display: flex;
   }
 
   nav li {
-    margin: 0.5em 0;
-    text-align: left;
+    margin: 0;
+    width: 100%;
+  }
+
+  nav li a {
+    display: block;
+    padding: 0.5em;
+    text-align: center;
+    border-bottom: 1px solid #444;
   }
 
   .subnav {
@@ -243,20 +238,20 @@ footer {
     display: block;
   }
 
+  .subnav a {
+    padding: 0.5em;
+    text-align: center;
+  }
+
   .search-container {
-    display: flex;
-    width: 90%;
-    margin-top: 1em;
+    width: 100%;
+    margin: 1em 0;
+    justify-content: space-between;
   }
 
   .search-container input {
     flex: 1;
-    padding: 0.5em;
     margin-right: 0.5em;
-  }
-
-  .search-container button {
-    padding: 0.5em;
   }
 
   .menu-icon {
@@ -265,28 +260,32 @@ footer {
     right: 1em;
     top: 1em;
     font-size: 1.5em;
-    cursor: pointer;
   }
 
   .content-grid {
-    display: grid;
     grid-template-columns: 1fr;
-    gap: 1.65em;
-    margin: 1em auto;
-    width: 90%;
-  }
-  .genre-grid {
-    margin-left: auto;
-    margin-right: auto;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 100px));
   }
 
-  .content-item{
-    width: 90%;
-    max-width: 300px;
+  .content-item {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    padding: 1em;
   }
-  .genre-item {
-        max-width: 90%;
-        max-width: 150px;
+
+  .content-item img {
+    width: 80px;
+    height: 120px;
+    margin-right: 1em;
+  }
+
+  .content-item h3 {
+    margin: 0;
+    font-size: 1em;
+  }
+
+  .genre-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   }
 }
