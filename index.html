@@ -8,42 +8,31 @@
   </head>
   <body>
     <header>
-      <h1>MangaAnime</h1>
-      <div class="menu-icon" onclick="toggleMenu()">☰</div>
-      <nav>
-        <div class="menu-icon" onclick="toggleMenu()">☰</div>
-        <ul id="main-menu">
-          <li>
-            <a href="#" id="anime-link">Аниме</a>
-            <div class="subnav">
-              <a href="#" id="anime-random">Случайное</a>
-              <a href="#" id="anime-popular">Популярное</a>
-              <a href="#" id="anime-genres">Жанры</a>
-            </div>
-          </li>
-          <li>
-            <a href="#" id="manga-link">Манга</a>
-            <div class="subnav">
-              <a href="#" id="manga-random">Случайное</a>
-              <a href="#" id="manga-popular">Популярное</a>
-              <a href="#" id="manga-genres">Жанры</a>
-            </div>
-          </li>
-        </ul>
-      </nav>
-      <div class="search-container">
-        <input type="text" placeholder="Поиск..." />
-        <button>Найти</button>
+      <div class="header-top">
+        <h1>MangaAnime</h1>
+        <nav>
+          <ul class="main-nav">
+            <li><a href="#" id="manga-link">Манга</a></li>
+            <li><a href="#" id="anime-link">Аниме</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header-bottom">
+        <div class="search-container">
+          <input type="text" placeholder="Поиск..." />
+          <button>Найти</button>
+        </div>
       </div>
     </header>
     <main>
+      <div class="section-indicator" id="section-indicator">Манга</div>
       <h2>Популярное сейчас</h2>
       <div class="content-grid" id="content"></div>
       <h2>Популярные жанры</h2>
       <div class="genre-grid" id="genres"></div>
     </main>
     <footer>
-      <p>&copy; 2024 MangaAnime. Все права защищены.</p>
+      <p>© 2024 MangaAnime. Все права не защищены.</p>
     </footer>
     <script src="./script.js"></script>
   </body>
